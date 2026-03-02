@@ -767,215 +767,7 @@
 .disclaimer { font-size: 10px; color: rgba(138,148,170,0.45); line-height: 1.7; text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 12px; }
 
 /* HIDDEN */
-
-/* ═══════════════════════════════════════════
-   DESKTOP LAYOUT — 769px and above
-   Mobile is completely untouched
-═══════════════════════════════════════════ */
-@media (min-width: 769px) {
-
-  /* ── HIDE MOBILE-ONLY ELEMENTS ── */
-  .lang-bar { display: none; }
-  .calc-float, .calc-float-menu { display: none; }
-  .whatsapp-float { display: none; }
-  .scroll-top { bottom: 30px; right: 30px; }
-
-  /* ── DESKTOP NAVBAR ── */
-  .dt-nav {
-    display: block;
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    background: rgba(10,14,26,0.92); backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(201,168,76,0.15);
-  }
-  .dt-nav-inner {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 40px; height: 64px;
-  }
-  .dt-nav-brand { display: flex; align-items: center; gap: 8px; }
-  .dt-nav-name {
-    font-family: 'Playfair Display', serif; font-size: 20px;
-    font-weight: 700; color: #fff;
-  }
-  .dt-nav-dot { color: var(--gold); font-size: 18px; }
-  .dt-nav-tag { font-size: 12px; color: var(--muted); letter-spacing: 0.5px; }
-  .dt-nav-links { display: flex; align-items: center; gap: 32px; }
-  .dt-nav-link {
-    font-size: 13px; font-weight: 500; color: var(--muted);
-    text-decoration: none; letter-spacing: 0.3px;
-    transition: color 0.2s;
-  }
-  .dt-nav-link:hover { color: var(--gold-light); }
-  .dt-nav-cta { display: flex; align-items: center; gap: 10px; }
-  .dt-nav-call {
-    padding: 8px 20px; border-radius: 10px; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700;
-    background: rgba(201,168,76,0.15); color: var(--gold-light);
-    border: 1px solid rgba(201,168,76,0.4); transition: background 0.2s;
-  }
-  .dt-nav-call:hover { background: rgba(201,168,76,0.25); }
-  .dt-nav-wa {
-    display: flex; align-items: center; gap: 6px;
-    padding: 8px 20px; border-radius: 10px; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700;
-    background: rgba(37,211,102,0.15); color: #25D366;
-    border: 1px solid rgba(37,211,102,0.35); transition: background 0.2s;
-  }
-  .dt-nav-wa:hover { background: rgba(37,211,102,0.25); }
-
-  /* ── DESKTOP SIDEBAR ── */
-  .dt-sidebar {
-    display: block;
-    position: fixed; top: 84px; right: calc((100vw - 1200px) / 2);
-    width: 280px; z-index: 100;
-    max-height: calc(100vh - 104px); overflow-y: auto;
-  }
-  .dt-sidebar-card {
-    background: var(--card); border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 18px; padding: 20px 18px;
-  }
-  .dt-sidebar-name {
-    font-family: 'Playfair Display', serif; font-size: 17px;
-    font-weight: 700; color: #fff; margin-bottom: 4px;
-  }
-  .dt-sidebar-tag { font-size: 11px; color: var(--gold); letter-spacing: 0.5px; margin-bottom: 4px; }
-  .dt-sidebar-loc { font-size: 11px; color: var(--muted); margin-bottom: 14px; }
-  .dt-sidebar-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 14px 0; }
-  .dt-sidebar-call {
-    display: flex; align-items: center; justify-content: center;
-    width: 100%; padding: 11px; border-radius: 10px; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700;
-    background: rgba(201,168,76,0.15); color: var(--gold-light);
-    border: 1px solid rgba(201,168,76,0.4); margin-bottom: 8px;
-    transition: background 0.2s;
-  }
-  .dt-sidebar-call:hover { background: rgba(201,168,76,0.25); }
-  .dt-sidebar-wa {
-    display: flex; align-items: center; justify-content: center; gap: 7px;
-    width: 100%; padding: 11px; border-radius: 10px; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700;
-    background: rgba(37,211,102,0.12); color: #25D366;
-    border: 1.5px solid rgba(37,211,102,0.4); margin-bottom: 8px;
-    transition: background 0.2s;
-  }
-  .dt-sidebar-wa:hover { background: rgba(37,211,102,0.22); }
-  .dt-sidebar-signup {
-    display: flex; align-items: center; justify-content: center;
-    width: 100%; padding: 11px; border-radius: 10px;
-    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
-    background: rgba(255,255,255,0.04); color: var(--muted);
-    border: 1px solid rgba(255,255,255,0.08); text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
-  .dt-sidebar-signup:hover { background: rgba(255,255,255,0.08); color: var(--text); }
-
-  /* Sidebar mini calc */
-  .dt-sidebar-mini-calc { }
-  .dt-sidebar-mini-title {
-    font-size: 11px; font-weight: 700; letter-spacing: 1px;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
-  }
-  .dt-sc-row { margin-bottom: 10px; }
-  .dt-sc-label {
-    display: flex; justify-content: space-between;
-    font-size: 11px; color: var(--muted); font-weight: 600;
-    letter-spacing: 0.3px; text-transform: uppercase; margin-bottom: 6px;
-  }
-  .dt-sc-val { color: var(--gold-light); font-size: 12px; text-transform: none; font-weight: 700; }
-  .dt-sc-result {
-    background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.04));
-    border: 1px solid rgba(201,168,76,0.2); border-radius: 12px;
-    padding: 12px; text-align: center; margin-top: 12px;
-  }
-  .dt-sc-result-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-  .dt-sc-result-amount {
-    font-family: 'Playfair Display', serif; font-size: 24px;
-    font-weight: 900; color: var(--gold-light); line-height: 1;
-  }
-  .dt-sc-result-sub { font-size: 10px; color: var(--muted); margin-top: 3px; }
-
-  /* Sidebar badges */
-  .dt-sidebar-badges { display: flex; flex-wrap: wrap; gap: 6px; }
-  .dt-badge {
-    font-size: 9px; color: rgba(138,148,170,0.5);
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 6px; padding: 3px 8px; letter-spacing: 0.5px;
-  }
-
-  /* ── MAIN LAYOUT ── */
-  body { padding-top: 64px; }
-  .wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px 60px 40px;
-    /* Leave room for sidebar on right */
-    padding-right: 340px;
-  }
-
-  /* ── HERO DESKTOP ── */
-  .hero { padding: 48px 0 40px; text-align: left; }
-  .hero > div {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-    align-items: center; padding: 36px 36px;
-  }
-  .hero-right {
-    display: flex; flex-direction: column; gap: 14px;
-  }
-  .nifty-ticker { margin-bottom: 0; }
-  h1 { font-size: clamp(2.2rem, 3.5vw, 3rem); text-align: left; }
-  .hero-sub { text-align: left; max-width: 100%; margin: 0; }
-  .hero-cta-wrap { justify-content: flex-start; }
-  .badge { display: inline-block; }
-
-  /* Stats become the right side of hero */
-  .stats {
-    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px; padding: 20px 16px;
-  }
-
-  /* ── CARDS — 3 columns on desktop ── */
-  .cards { flex-direction: row; flex-wrap: wrap; }
-  .cards .card { flex: 1; min-width: 200px; }
-
-  /* ── HOW IT WORKS — horizontal ── */
-  .steps { flex-direction: row; gap: 0; }
-  .steps::before {
-    top: 23px; left: 24px; right: 24px; bottom: auto;
-    width: auto; height: 2px;
-  }
-  .step { flex-direction: column; align-items: center; text-align: center; flex: 1; padding: 0 16px 0; }
-  .step-content { padding-top: 12px; }
-
-  /* ── FAQ — two columns ── */
-  #faqSection { columns: 2; column-gap: 16px; }
-  .faq-item { break-inside: avoid; margin-bottom: 10px; }
-  .faq-category { break-inside: avoid; column-span: all; }
-
-  /* ── FOOTER — three columns ── */
-  .footer {
-    display: grid; grid-template-columns: 1fr 1fr 1fr;
-    text-align: left; gap: 24px; align-items: start;
-    padding-top: 30px;
-  }
-  .footer > * { margin: 0; }
-  .advisor-name { grid-column: 1; }
-  .advisor-tag { grid-column: 1; }
-  .footer-location { grid-column: 1; }
-  .insta-link { grid-column: 1; justify-content: flex-start; }
-  .disclaimer-box { grid-column: 2 / span 2; text-align: left; }
-
-  /* ── SCROLL MARGIN for fixed navbar ── */
-  #divGoal, #divCalc, #divHCE, #divFaq, #divEF, #divProtect { scroll-margin-top: 84px; }
-
-  /* ── HIDE MOBILE SIDEBAR ELEMENTS ON DESKTOP ── */
-  .dt-nav { display: flex; }
-}
-
-/* ── HIDE DESKTOP ELEMENTS ON MOBILE ── */
-.dt-nav { display: none; }
-.dt-sidebar { display: none; }
-
-
+  #divGoal, #divCalc, #divHCE { scroll-margin-top: 20px; }
 .hidden { display: none !important; }
 </style>
 </head>
@@ -1010,69 +802,6 @@
   <button id="installBtn" style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:#F0D080;font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;cursor:pointer;white-space:nowrap;flex-shrink:0;">Install</button>
   <button id="dismissBtn" aria-label="Dismiss" style="background:none;border:none;color:#8A94AA;font-size:20px;cursor:pointer;padding:0 2px;line-height:1;flex-shrink:0;">×</button>
 </div>
-
-<!-- Desktop Navbar (hidden on mobile) -->
-<nav class="dt-nav" id="dtNav">
-  <div class="dt-nav-inner">
-    <div class="dt-nav-brand">
-      <span class="dt-nav-name">Sanjan</span>
-      <span class="dt-nav-dot">·</span>
-      <span class="dt-nav-tag">Financial Advisor</span>
-    </div>
-    <div class="dt-nav-links">
-      <a href="#divGoal" class="dt-nav-link">Goal Planner</a>
-      <a href="#divCalc" class="dt-nav-link">SIP Calculator</a>
-      <a href="#divHCE" class="dt-nav-link">Health Cover</a>
-      <a href="#divFaq" class="dt-nav-link">FAQ</a>
-    </div>
-    <div class="dt-nav-cta">
-      <button id="dtCallBtn" class="dt-nav-call">📞 Call Sanjan</button>
-      <button id="dtWaBtn" class="dt-nav-wa">
-        <svg width="16" height="16" viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.49 2.031 7.807L0 32l8.418-2.006A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.784-1.858l-.487-.29-5.002 1.192 1.27-4.87-.318-.5A13.24 13.24 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/></svg>
-        WhatsApp
-      </button>
-    </div>
-  </div>
-</nav>
-
-<!-- Desktop Sidebar (hidden on mobile) -->
-<aside class="dt-sidebar" id="dtSidebar">
-  <div class="dt-sidebar-card">
-    <div class="dt-sidebar-name">Sanjan Jayadevan</div>
-    <div class="dt-sidebar-tag">AMFI Registered MFD · ARN-321342</div>
-    <div class="dt-sidebar-loc">📍 Thrissur, Kerala</div>
-    <div class="dt-sidebar-divider"></div>
-    <button id="dtSideCallBtn" class="dt-sidebar-call">📞 Call Sanjan</button>
-    <button id="dtSideWaBtn" class="dt-sidebar-wa">
-      <svg width="16" height="16" viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.49 2.031 7.807L0 32l8.418-2.006A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.784-1.858l-.487-.29-5.002 1.192 1.27-4.87-.318-.5A13.24 13.24 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/></svg>
-      WhatsApp Sanjan
-    </button>
-    <a href="https://www.assetplus.in/mfd/sanjan" target="_blank" rel="noopener noreferrer" class="dt-sidebar-signup">🚀 Start SIP Online</a>
-    <div class="dt-sidebar-divider"></div>
-    <div class="dt-sidebar-mini-calc">
-      <div class="dt-sidebar-mini-title">Quick SIP Estimate</div>
-      <div class="dt-sc-row">
-        <label class="dt-sc-label">Monthly SIP <span id="dtScAmtVal" class="dt-sc-val">₹5,000</span></label>
-        <input type="range" class="calc-slider" id="dtScAmt" min="500" max="50000" step="500" value="5000">
-      </div>
-      <div class="dt-sc-row">
-        <label class="dt-sc-label">Years <span id="dtScYrVal" class="dt-sc-val">10 yrs</span></label>
-        <input type="range" class="calc-slider" id="dtScYr" min="1" max="30" step="1" value="10">
-      </div>
-      <div class="dt-sc-result">
-        <div class="dt-sc-result-label">Estimated Value</div>
-        <div class="dt-sc-result-amount" id="dtScResult">₹11.6 L</div>
-        <div class="dt-sc-result-sub">at 12% p.a.</div>
-      </div>
-    </div>
-    <div class="dt-sidebar-divider"></div>
-    <div class="dt-sidebar-badges">
-      <span class="dt-badge">AMFI REGISTERED</span>
-      <span class="dt-badge">SEBI REGULATED</span>
-      <span class="dt-badge">ARN-321342</span>
-    </div>
-  </div>
-</aside>
 
 <div class="bg-glow"></div>
 
@@ -1715,11 +1444,9 @@
     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span id="q10">Do you recommend specific insurance brands?</span><span class="arrow">+</span></button><div class="faq-a"><span id="a10">No. I am completely unbiased and not tied to any specific insurer. My job is to understand your family's needs and find the right health or term cover at the best premium — across all available options. You get honest advice, not a sales pitch for a particular brand.</span></div></div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span id="q12">How do I get a free health insurance assessment?</span><span class="arrow">+</span></button><div class="faq-a"><span id="a12">Simply contact Sanjan for a free conversation. He will assess your current health cover, identify any gaps, and compare plans across all major insurers to find the right cover at the best premium for your family — zero brand bias, no obligation, no spam.</span></div></div>
 
-    <div class="faq-category">🧮 Calculators</div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span id="qc1">Do you have a free SIP calculator?</span><span class="arrow">+</span></button><div class="faq-a"><span id="ac1">Yes — the SIP calculator and Goal Planner on this page are completely free to use. Enter your monthly amount, years and expected return to see exactly how your wealth grows. For a personalised plan tailored to your goals, contact Sanjan.</span></div></div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span id="qc2">How do I estimate how much health insurance I need?</span><span class="arrow">+</span></button><div class="faq-a"><span id="ac2">Use the free Health Cover Estimator on this page — answer 5 simple questions about your family size, age, city and health profile to get a personalised cover recommendation instantly. For a full unbiased assessment across all insurers, contact Sanjan.</span></div></div>
 
-    <div class="faq-category">📈 Investing & SIP</div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span id="q1">Is my money safe in Mutual Funds?</span><span class="arrow">+</span></button><div class="faq-a"><span id="a1">Mutual funds are regulated by SEBI, India's top financial regulator. Your money is held by an independent custodian — not by me or AssetPlus. While market risks exist, long-term SIPs have historically delivered inflation-beating returns — making it one of the best ways for salaried individuals across Kerala to grow their money steadily. Risk reduces significantly over longer horizons.</span></div></div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span id="q2">Can I stop or pause my SIP anytime?</span><span class="arrow">+</span></button><div class="faq-a"><span id="a2">Yes! SIP is completely flexible. You can pause, stop, increase, or decrease your SIP amount anytime — no penalty, no lock-in (except ELSS which has a 3-year lock-in for tax benefit).</span></div></div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span id="q3">What is the minimum amount to start SIP?</span><span class="arrow">+</span></button><div class="faq-a"><span id="a3">You can start a SIP with as little as ₹100 per month. There is no maximum limit. Even if you have just ₹500 or ₹1000 per month to spare, that is enough to start building real wealth. Start small, build the habit, and increase when you're ready.</span></div></div>
@@ -2491,43 +2218,6 @@
   }
 
 
-  // ── DESKTOP NAVBAR & SIDEBAR BUTTONS ─────────────────
-  ['dtCallBtn','dtSideCallBtn'].forEach(function(id){
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('click', function(){ x8(); });
-  });
-  ['dtWaBtn','dtSideWaBtn'].forEach(function(id){
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('click', function(){ m5('Hi Sanjan! I want to start a SIP. Please guide me.'); });
-  });
-  document.querySelectorAll('.dt-nav-link').forEach(function(link){
-    link.addEventListener('click', function(e){
-      e.preventDefault();
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
-  // ── DESKTOP SIDEBAR MINI CALC ─────────────────────────
-  function calcDtMini() {
-    var amt = parseFloat(document.getElementById('dtScAmt').value) || 5000;
-    var yr  = parseFloat(document.getElementById('dtScYr').value)  || 10;
-    var r   = 12 / 100 / 12;
-    var n   = yr * 12;
-    var fv  = amt * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
-    document.getElementById('dtScAmtVal').textContent = '₹' + amt.toLocaleString('en-IN');
-    document.getElementById('dtScYrVal').textContent  = yr + ' yrs';
-    var res = fv >= 10000000 ? '₹' + (fv/10000000).toFixed(1) + ' Cr'
-            : fv >= 100000  ? '₹' + (fv/100000).toFixed(1) + ' L'
-            : '₹' + Math.round(fv).toLocaleString('en-IN');
-    document.getElementById('dtScResult').textContent = res;
-  }
-  var dtScAmt = document.getElementById('dtScAmt');
-  var dtScYr  = document.getElementById('dtScYr');
-  if (dtScAmt) dtScAmt.addEventListener('input', calcDtMini);
-  if (dtScYr)  dtScYr.addEventListener('input', calcDtMini);
-  calcDtMini();
-
   // scrollTop
   var _scrollBtn = document.getElementById('scrollTop');
   if (_scrollBtn) _scrollBtn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
@@ -2859,3 +2549,4 @@ function calculate() {
 </body>
 </html>
 
+=
