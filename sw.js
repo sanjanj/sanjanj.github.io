@@ -1,7 +1,7 @@
 // Sanjan MFD – Service Worker
 // Caches the site for offline use. No external data is ever cached.
 
-const CACHE_NAME = 'sanjan-v1';
+const CACHE_NAME = 'sanjan-v2';
 const OFFLINE_URL = '/404.html';
 
 const PRECACHE = [
@@ -65,4 +65,3 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
-
