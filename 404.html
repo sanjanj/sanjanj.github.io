@@ -383,13 +383,6 @@
     });
   });
 
-  // ── REDIRECT: /sanjan/ → new root URL ──
-  (function(){
-    if(window.location.pathname.indexOf("/sanjan") === 0){
-      window.location.replace("https://sanjanj.github.io/");
-    }
-  })();
-
   // Register service worker for offline support
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(() => {});
@@ -397,5 +390,3 @@
 </script>
 </body>
 </html>
-
-]
