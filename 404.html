@@ -1,3 +1,6 @@
+
+AAAAAA SJ WEB
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -312,7 +315,7 @@
 
   <div class="divider"></div>
 
-  <a href="https://sanjanj.github.io/sanjan/" class="btn-primary">
+  <a href="https://sanjanj.github.io/" class="btn-primary">
     ← Back to Home
   </a>
 
@@ -383,9 +386,16 @@
     });
   });
 
+  // ── REDIRECT: /sanjan/ → new root URL ──
+  (function(){
+    if(window.location.pathname.indexOf("/sanjan") === 0){
+      window.location.replace("https://sanjanj.github.io/");
+    }
+  })();
+
   // Register service worker for offline support
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sanjan/sw.js').catch(() => {});
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
   }
 </script>
 </body>
