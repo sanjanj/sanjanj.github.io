@@ -1998,33 +1998,6 @@
   const _IST_DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   const _IST_MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
-  // Show ticker immediately with date/time — never wait for API
-  (function initTickerNow() {
-    const ticker = document.getElementById('niftyTicker');
-    const priceEl = document.getElementById('niftyPrice');
-    const changeEl = document.getElementById('niftyChange');
-    const dot = document.getElementById('niftyDot');
-    const datetimeEl = document.getElementById('niftyDatetime');
-    const nowIST = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-    const dayName = _IST_DAYS[nowIST.getDay()];
-    const d = nowIST.getDate(), m = _IST_MONTHS[nowIST.getMonth()];
-    let h = nowIST.getHours(), min = String(nowIST.getMinutes()).padStart(2,'0');
-    const sec = String(nowIST.getSeconds()).padStart(2,'0');
-    const ampm = h >= 12 ? 'pm' : 'am'; h = h % 12 || 12;
-    const istDay = nowIST.getDay();
-    const istHHMM = nowIST.getHours() * 100 + nowIST.getMinutes();
-    const isWeekend = istDay === 0 || istDay === 6;
-    const marketOpen = !isWeekend && istHHMM >= 915 && istHHMM <= 1530;
-    if (priceEl) priceEl.textContent = '...';
-    if (changeEl) { changeEl.textContent = marketOpen ? 'LIVE' : 'Closed'; changeEl.className = 'nifty-change ' + (marketOpen ? 'up' : 'down'); }
-    if (dot) dot.className = 'nifty-dot' + (marketOpen ? '' : ' closed');
-    let statusMsg = '';
-    if (isWeekend) statusMsg = '  ·  Market Closed · Opens Mon 9:15 AM';
-    else if (!marketOpen) statusMsg = istHHMM < 915 ? '  ·  Opens at 9:15 AM' : '  ·  Closed · Last price';
-    if (datetimeEl) datetimeEl.textContent = dayName + ', ' + d + ' ' + m + ', ' + h + ':' + min + ':' + sec + ' ' + ampm + ' IST' + statusMsg;
-    if (ticker) ticker.classList.add('loaded');
-  })();
-
   async function fetchNifty() {
     const day = new Date().getDay(); // 0=Sun,1=Mon,...,5=Fri,6=Sat
     const isWeekend = [0, 6].includes(day);
@@ -2091,7 +2064,7 @@
       let data = null;
       for (const proxyUrl of proxies) {
         try {
-          let _sig; try { _sig = AbortSignal.timeout(4000); } catch(_e) { const _ac = new AbortController(); setTimeout(() => _ac.abort(), 4000); _sig = _ac.signal; }
+          let _sig; try { _sig = AbortSignal.timeout(8000); } catch(_e) { const _ac = new AbortController(); setTimeout(() => _ac.abort(), 8000); _sig = _ac.signal; }
           const res = await fetch(proxyUrl, { signal: _sig });
           if (!res.ok) continue;
           const json = await res.json();
@@ -2150,14 +2123,13 @@
         }
       } catch(ce) {}
 
-      // No cache — still show ticker with unavailable message so it's never invisible
-      if (priceEl) priceEl.textContent = '—';
+      // No cache — show just the change area, price stays blank (label already shows NIFTY 50)
+      if (priceEl) priceEl.textContent = '';
       if (changeEl) {
-        changeEl.textContent = isWeekend ? 'Closed' : 'Unavailable';
-        changeEl.className = 'nifty-change down';
-        changeEl.style.color = '';
+        changeEl.textContent = isWeekend ? '· Closed · Opens Mon' : '· Data unavailable';
+        changeEl.className = 'nifty-change';
+        changeEl.style.color = 'var(--muted)';
       }
-      if (datetimeEl) datetimeEl.textContent = isWeekend ? 'Market closed on weekends' : 'Could not fetch live data';
       if (dot) { dot.className = 'nifty-dot closed'; }
       if (ticker) ticker.classList.add('loaded');
     }
