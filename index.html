@@ -885,15 +885,15 @@
     <div class="calc-row">
       <div class="calc-label">My Goal Amount <span id="goalValTarget" class="calc-val">₹25 L</span></div>
       <!-- Log scale: 0–100 → ₹1L–₹10Cr -->
-      <input type="range" class="calc-slider" id="goalSliderTarget" min="0" max="100" step="1" value="30">
+      <input type="range" class="calc-slider" id="goalSliderTarget" aria-label="Target amount" min="0" max="100" step="1" value="30">
     </div>
     <div class="calc-row">
       <div class="calc-label">Time to Achieve <span id="goalValYears" class="calc-val">10 Years</span></div>
-      <input type="range" class="calc-slider" id="goalSliderYears" min="1" max="30" step="1" value="10">
+      <input type="range" class="calc-slider" id="goalSliderYears" aria-label="Investment years" min="1" max="30" step="1" value="10">
     </div>
     <div class="calc-row">
       <div class="calc-label">Expected Return <span id="goalValRate" class="calc-val">12% p.a.</span></div>
-      <input type="range" class="calc-slider" id="goalSliderRate" min="6" max="25" step="0.5" value="12">
+      <input type="range" class="calc-slider" id="goalSliderRate" aria-label="Expected return rate" min="6" max="25" step="0.5" value="12">
     </div>
 
     <div class="calc-result" style="margin-top:16px;">
@@ -1073,32 +1073,32 @@
     <div class="q-title">Who needs coverage?</div>
     <div class="q-sub">Select all members who'll be on the same policy.</div>
     <div class="chip-grid cols-3" id="membersGrid">
-      <div class="chip" data-val="self" id="mSelf">
+      <div class="chip" role="button" tabindex="0" data-val="self" id="mSelf">
         <span class="chip-icon">🧑</span>
         <span class="chip-main">Just Me</span>
         <span class="chip-note">Individual</span>
       </div>
-      <div class="chip" data-val="self+spouse" id="mCouple">
+      <div class="chip" role="button" tabindex="0" data-val="self+spouse" id="mCouple">
         <span class="chip-icon">👫</span>
         <span class="chip-main">Me + Spouse</span>
         <span class="chip-note">2 members</span>
       </div>
-      <div class="chip" data-val="self+spouse+1child" id="mFamily3">
+      <div class="chip" role="button" tabindex="0" data-val="self+spouse+1child" id="mFamily3">
         <span class="chip-icon">👨‍👩‍👦</span>
         <span class="chip-main">Family of 3</span>
         <span class="chip-note">Spouse + 1 child</span>
       </div>
-      <div class="chip" data-val="self+spouse+2children" id="mFamily4">
+      <div class="chip" role="button" tabindex="0" data-val="self+spouse+2children" id="mFamily4">
         <span class="chip-icon">👨‍👩‍👧‍👦</span>
         <span class="chip-main">Family of 4</span>
         <span class="chip-note">Spouse + 2 children</span>
       </div>
-      <div class="chip" data-val="self+spouse+children+parents" id="mLarge">
+      <div class="chip" role="button" tabindex="0" data-val="self+spouse+children+parents" id="mLarge">
         <span class="chip-icon">🏠</span>
         <span class="chip-main">Joint Family</span>
         <span class="chip-note">Parents included</span>
       </div>
-      <div class="chip" data-val="parents" id="mParents">
+      <div class="chip" role="button" tabindex="0" data-val="parents" id="mParents">
         <span class="chip-icon">👴👵</span>
         <span class="chip-main">Parents Only</span>
         <span class="chip-note">Senior plan</span>
@@ -1119,7 +1119,7 @@
         <span class="hc-slider-val" id="ageDisplay">18</span>
         <span class="hc-slider-unit">years old</span>
       </div>
-      <input type="range" id="ageSlider" min="18" max="70" value="18">
+      <input type="range" id="ageSlider" aria-label="Your age" min="18" max="70" value="18">
       <div class="hc-slider-ticks">
         <span class="hc-slider-tick">18</span>
         <span class="hc-slider-tick">30</span>
@@ -1140,28 +1140,28 @@
     <div class="q-title">Where do you live?</div>
     <div class="q-sub">Hospital costs vary significantly across cities. Metro hospitals can charge 3–4× more.</div>
     <div class="chip-grid cols-1" id="cityGrid" style="gap:10px;">
-      <div class="chip" data-val="rural" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;">
+      <div class="chip" role="button" tabindex="0" data-val="rural" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;">
         <span style="font-size:24px;flex-shrink:0;">🏡</span>
         <div>
           <span class="chip-main">Rural / Small Town</span>
           <span class="chip-note" style="text-align:left;">Thrissur outskirts, Palakkad, Wayanad</span>
         </div>
       </div>
-      <div class="chip" data-val="semi" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;">
+      <div class="chip" role="button" tabindex="0" data-val="semi" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;">
         <span style="font-size:24px;flex-shrink:0;">🏘️</span>
         <div>
           <span class="chip-main">Semi-Urban</span>
           <span class="chip-note" style="text-align:left;">Thrissur city, Palakkad, Kollam, Kottayam</span>
         </div>
       </div>
-      <div class="chip" data-val="urban" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;">
+      <div class="chip" role="button" tabindex="0" data-val="urban" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;">
         <span style="font-size:24px;flex-shrink:0;">🏙️</span>
         <div>
           <span class="chip-main">Urban</span>
           <span class="chip-note" style="text-align:left;">Kochi, Kozhikode, Trivandrum</span>
         </div>
       </div>
-      <div class="chip" data-val="metro" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;">
+      <div class="chip" role="button" tabindex="0" data-val="metro" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;">
         <span style="font-size:24px;flex-shrink:0;">🌆</span>
         <div>
           <span class="chip-main">Metro</span>
@@ -1184,15 +1184,15 @@
     <div style="margin-bottom:16px;">
       <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Lifestyle</div>
       <div class="chip-grid cols-3" id="activityGrid">
-        <div class="chip" data-val="active">
+        <div class="chip" role="button" tabindex="0" data-val="active">
           <span class="chip-icon">🏃</span>
           <span class="chip-main">Active</span>
         </div>
-        <div class="chip" data-val="moderate">
+        <div class="chip" role="button" tabindex="0" data-val="moderate">
           <span class="chip-icon">🚶</span>
           <span class="chip-main">Moderate</span>
         </div>
-        <div class="chip" data-val="sedentary">
+        <div class="chip" role="button" tabindex="0" data-val="sedentary">
           <span class="chip-icon">🛋️</span>
           <span class="chip-main">Sedentary</span>
         </div>
@@ -1202,27 +1202,27 @@
     <div style="margin-bottom:16px;">
       <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Tobacco / Smoking</div>
       <div class="toggle-row" id="smokerGrid">
-        <div class="toggle-chip" data-val="no">Non-smoker ✓</div>
-        <div class="toggle-chip red" data-val="yes">Smoker</div>
+        <div class="toggle-chip" role="button" tabindex="0" data-val="no">Non-smoker ✓</div>
+        <div class="toggle-chip red" role="button" tabindex="0" data-val="yes">Smoker</div>
       </div>
     </div>
 
     <div>
       <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Pre-existing conditions</div>
       <div class="chip-grid cols-2" id="conditionGrid">
-        <div class="chip" data-val="none">
+        <div class="chip" role="button" tabindex="0" data-val="none">
           <span class="chip-main">None</span>
           <span class="chip-note">All clear</span>
         </div>
-        <div class="chip" data-val="bp">
+        <div class="chip" role="button" tabindex="0" data-val="bp">
           <span class="chip-main">BP / Diabetes</span>
           <span class="chip-note">Lifestyle conditions</span>
         </div>
-        <div class="chip" data-val="heart">
+        <div class="chip" role="button" tabindex="0" data-val="heart">
           <span class="chip-main">Heart / Cardiac</span>
           <span class="chip-note">Higher risk</span>
         </div>
-        <div class="chip" data-val="other">
+        <div class="chip" role="button" tabindex="0" data-val="other">
           <span class="chip-main">Other</span>
           <span class="chip-note">Chronic illness etc.</span>
         </div>
@@ -1241,19 +1241,19 @@
     <div class="q-title">Annual household income?</div>
     <div class="q-sub">This helps balance the recommendation — cover should be meaningful but not unaffordable.</div>
     <div class="chip-grid cols-2" id="incomeGrid" style="gap:10px;">
-      <div class="chip" data-val="below3">
+      <div class="chip" role="button" tabindex="0" data-val="below3">
         <span class="chip-main">Below ₹3L</span>
         <span class="chip-note">₹25k/month</span>
       </div>
-      <div class="chip" data-val="3to6">
+      <div class="chip" role="button" tabindex="0" data-val="3to6">
         <span class="chip-main">₹3L – ₹6L</span>
         <span class="chip-note">₹25k–₹50k/month</span>
       </div>
-      <div class="chip" data-val="6to12">
+      <div class="chip" role="button" tabindex="0" data-val="6to12">
         <span class="chip-main">₹6L – ₹12L</span>
         <span class="chip-note">₹50k–₹1L/month</span>
       </div>
-      <div class="chip" data-val="above12">
+      <div class="chip" role="button" tabindex="0" data-val="above12">
         <span class="chip-main">Above ₹12L</span>
         <span class="chip-note">₹1L+/month</span>
       </div>
@@ -1325,15 +1325,15 @@
       <div class="calc-row">
         <div class="calc-label">Monthly SIP <span id="valAmount" class="calc-val">₹5,000</span></div>
         <!-- Log scale: 0–100 → ₹100–₹10Cr -->
-        <input type="range" class="calc-slider" id="sliderAmount" min="0" max="100" step="1" value="38">
+        <input type="range" class="calc-slider" id="sliderAmount" aria-label="Monthly SIP amount" min="0" max="100" step="1" value="38">
       </div>
       <div class="calc-row">
         <div class="calc-label">Duration <span id="valYears" class="calc-val">10 Years</span></div>
-        <input type="range" class="calc-slider" id="sliderYears" min="1" max="30" step="1" value="10">
+        <input type="range" class="calc-slider" id="sliderYears" aria-label="SIP duration in years" min="1" max="30" step="1" value="10">
       </div>
       <div class="calc-row">
         <div class="calc-label">Expected Return <span id="valRate" class="calc-val">15% p.a.</span></div>
-        <input type="range" class="calc-slider" id="sliderRate" min="6" max="25" step="0.5" value="15">
+        <input type="range" class="calc-slider" id="sliderRate" aria-label="Expected annual return" min="6" max="25" step="0.5" value="15">
       </div>
       <div class="calc-result">
         <div class="calc-result-top">
@@ -1365,15 +1365,15 @@
       <div class="calc-row">
         <div class="calc-label">Lumpsum Amount <span id="lValAmount" class="calc-val">₹1,00,000</span></div>
         <!-- Log scale: slider 0–100 maps to ₹1,000–₹10,00,00,000 -->
-        <input type="range" class="calc-slider" id="lSliderAmount" min="0" max="100" step="1" value="35">
+        <input type="range" class="calc-slider" id="lSliderAmount" aria-label="Lumpsum amount" min="0" max="100" step="1" value="35">
       </div>
       <div class="calc-row">
         <div class="calc-label">Duration <span id="lValYears" class="calc-val">10 Years</span></div>
-        <input type="range" class="calc-slider" id="lSliderYears" min="1" max="30" step="1" value="10">
+        <input type="range" class="calc-slider" id="lSliderYears" aria-label="Investment duration in years" min="1" max="30" step="1" value="10">
       </div>
       <div class="calc-row">
         <div class="calc-label">Expected Return <span id="lValRate" class="calc-val">12% p.a.</span></div>
-        <input type="range" class="calc-slider" id="lSliderRate" min="6" max="25" step="0.5" value="12">
+        <input type="range" class="calc-slider" id="lSliderRate" aria-label="Expected annual return rate" min="6" max="25" step="0.5" value="12">
       </div>
       <div class="calc-result">
         <div class="calc-result-top">
